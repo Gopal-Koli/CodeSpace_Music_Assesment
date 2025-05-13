@@ -42,7 +42,7 @@ const SmallVisible = ({ songs, onSongSelect, visible, formatTime }) => {
             key={song.id}
             onClick={() => onSongSelect(song, index)}
             className={`flex items-center justify-between p-2 rounded-md cursor-pointer ${
-              currentIndex === index ? "bg-[#3d3d3d]" : "hover:bg-[#2a2a2a]"
+               currentIndex === index ? "bg-[#3d3d3d]" : "hover:bg-[#2a2a2a]" //Current song playing
             }`}
           >
             <div className="flex items-center gap-3">

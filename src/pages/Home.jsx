@@ -159,7 +159,7 @@ const Home = () => {
     fetchSongs();
   }, []);
   // Disply loading when load the song
-  if (loading) return <div>Loading songs...</div>;
+  if (loading) return <div>Please Waite..! </div>;
   return (
     <div
       className="flex flex-col lg:flex-row min-h-screen lg:h-screen bg-gradient-to-br from-[#1e130c] to-[#1a1010] text-white"
@@ -179,7 +179,7 @@ const Home = () => {
         </button>
         {/*Logo   */}
         <p className="text-white font-bold flex items-center gap-1">
-          <FaSpotify className="mt-1" />
+          <FaSpotify className="" />
           Spotify
         </p>
       </div>
@@ -288,7 +288,7 @@ const Home = () => {
               color="white"
               className=""
               sx={{
-                width: { xs: 250, sm: 290, md: 330, lg: 335 }, // Seeker Size base on screen
+                width: { xs: 280, sm: 290, md: 330, lg: 335 }, // Seeker Size base on screen
                 "& .MuiSlider-thumb": {
                   display: "none", // for hidding white round
                 },
@@ -310,7 +310,7 @@ const Home = () => {
           </span>
           <div className="flex items-center justify-center ml-auto ">
             <Button
-              className="!text-white  transition-transform duration-200 !p-2  !rounded-full"
+              className="!text-white !ml-4 transition-transform duration-200 !p-2  !rounded-full"
               onClick={handlePrevious}
             >
               <FaBackward />
@@ -335,7 +335,7 @@ const Home = () => {
             </Button>
           </div>
 
-          <p className="text-white ml-auto  ">
+          <p className="text-white ml-6  ">
             <MuteButton
               isMuted={isMuted}
               onToggleMute={() => setIsMuted(!isMuted)}
