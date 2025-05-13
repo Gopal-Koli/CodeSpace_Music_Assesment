@@ -10,8 +10,8 @@ const SmallVisible = ({ songs, onSongSelect, visible, formatTime }) => {
   const [activeTab, setActiveTab] = useState("For You");
   const [currentIndex, setCurrentIndex] = useState(null);
   return (
-    <div className="lg:hidden fixed top-14 left-0 right-0 bottom-0 z-50 bg-black overflow-y-auto p-4">
-      <div className="sticky top-0 z-10 bg-[#000]">
+    <div className="lg:hidden fixed top-14 left-0 right-0 bottom-0 z-50 bg-black overflow-y-auto pl-2 pr-2">
+      <div className="sticky top-0 z-10  bg-[#000]">
         {/*  For You and Top Tracks */}
         <TabsHeader activeTab={activeTab} setActiveTab={setActiveTab} />
         {/* Search Box with filter song which users searches */}
