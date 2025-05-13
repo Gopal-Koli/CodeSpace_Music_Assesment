@@ -159,7 +159,11 @@ const Home = () => {
     fetchSongs();
   }, []);
   // Disply loading when load the song
-  if (loading) return <div>Please Waite..! </div>;
+  if (loading) return (
+  <div className="flex items-center justify-center min-h-screen bg-black text-white">
+    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-white"></div>
+  </div>
+);;
   return (
     <div
       className="flex flex-col lg:flex-row min-h-screen lg:h-screen bg-gradient-to-br from-[#1e130c] to-[#1a1010] text-white"
@@ -169,7 +173,7 @@ const Home = () => {
       }}
     >
       {/* On large Screen this Part will Widden and small screen this part will show */}
-      <div className="lg:hidden sticky top-0 z-10 flex  h-full justify-between items-center p-4 bg-black ">
+      <div className="lg:hidden flex  h-full justify-between items-center p-4 bg-black">
         <button
           onClick={() => setShowSongList(!showSongList)}
           className="text-white text-sm bg-gray-800 p-1 rounded"
@@ -241,7 +245,7 @@ const Home = () => {
                     src={`https://cms.samespace.com/assets/${song.cover}`}
                     alt={song.name}
                     width={100}
-                    className="w-10 h-10 rounded-full object-cover"
+                    className="w-10 h-10 rounded-full object-cover "
                   />
                   <div>
                     <p className="text-sm">{song.name || "Unknown Title"}</p>
@@ -260,11 +264,11 @@ const Home = () => {
       {/* Song Player Big with cover   */}
       <div className="w-full items-center sm:max-w-lg   md:w-[300px] lg:w-[500px] sm:mt-12 d:mt-14 lg:mt-16  mx-auto  mt-16 px-4 pt-6 pb-10">
         <div className=" mb-4">
-          <h1 className="text-2xl font-bold text-white">
+          <h1 className="text-2xl font-bold text-white  transition-opacity duration-300">
             {currentSong ? currentSong.name : "Select a Song"}
           </h1>
           {/*displays song title and artist name */}
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-400  transition-opacity duration-300">
             {currentSong ? currentSong.artist : "Artist"}
           </p>
         </div>
@@ -277,7 +281,8 @@ const Home = () => {
                 : "https://i.scdn.co/image/ab67706f00000002dcb7b32f8bf2e6a7851245e3"
             }
             alt="Album Art" //some network load or issue display the image when not show Album Art
-            className="w-[280px] h-[230px] sm:h-[250px] sm:w-[280px]  md:w-[290px] md:h-[280px] lg:w-[340px] lg:h-[300px] rounded-lg object-cover shadow-lg transition-transform duration-300 "
+            className="w-[280px] h-[230px] sm:h-[250px] sm:w-[280px]  md:w-[290px] md:h-[280px] lg:w-[340px] lg:h-[300px] rounded-lg object-cover shadow-lg transition-opacity  duration-300 opacity-0"
+             onLoad={(e) => e.currentTarget.classList.remove("opacity-0")}
           />
           <Box className="w-[280px] h-[30px] sm:w-[27px]  sm:h-[30px]  ">
             {/* Seeker ( Music slider) styled using Material UI Slider*/}
