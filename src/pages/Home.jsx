@@ -169,7 +169,7 @@ const Home = () => {
       }}
     >
       {/* On large Screen this Part will Widden and small screen this part will show */}
-      <div className="lg:hidden flex  h-full justify-between items-center p-4 bg-black">
+      <div className="lg:hidden sticky top-0 z-10 flex  h-full justify-between items-center p-4 bg-black ">
         <button
           onClick={() => setShowSongList(!showSongList)}
           className="text-white text-sm bg-gray-800 p-1 rounded"
